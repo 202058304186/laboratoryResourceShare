@@ -1,4 +1,4 @@
-package common;
+package User.account;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -9,16 +9,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class loginManager
+ * Servlet implementation class LoginSuccessfully
  */
-@WebServlet("/login-manager")
-public class loginManager extends HttpServlet {
+@WebServlet("/login-success")
+public class LoginSuccessfully extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public loginManager() {
+    public LoginSuccessfully() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,22 +28,12 @@ public class loginManager extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.setCharacterEncoding("UTF-8");//对请求设定字符集
-		response.setContentType("text/html;charset=UTF-8");//对响应设定数据类型和字符集
-		PrintWriter out = response.getWriter();//获取响应对象的输出器
 		String userName = request.getParameter("userName");//获取请求中的用户名
 		String userPassword = request.getParameter("userPassword");//获取请求中的密码
-		if (!LoginConfirmer(userName, userPassword)) {
-			out.println("数据检索——登录失败！ERROR:LoginConfirmer return the result:false.");
-		}//传给登录验证器判断用户名和密码是否正确。
-		else {
-			out.println("欢迎登录，" + userName + "!<br/>");
-			out.println("您的密码为：" + userPassword + "<br/>");
-		}
-	}
-	
-	private boolean LoginConfirmer(String userName, String userPassword) {
 		
-		return true;
+		PrintWriter out = response.getWriter();
+		out.println("登录成功！<br/>您的用户名为：" + userName + "<br/>");
+		out.println("您的密码为：" + userPassword);
 	}
+
 }
