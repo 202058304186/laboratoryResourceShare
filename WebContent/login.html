@@ -5,11 +5,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form method="post" action="login-manager">
+	<form method="post" action="login-manager" enctype="multipart/form-data">
+		<fieldset>
+		<legend>登录页面</legend>
 		用户名：<input type="text" name="userName">
 		密名：<input type="password" name="userPassword">
 		验证码：<input type="text" name="verificationCode">
 		<input type="submit" value="登录">
+		</fieldset>
 	</form>
 </body>
 </html>
