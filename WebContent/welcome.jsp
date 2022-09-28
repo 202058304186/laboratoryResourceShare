@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>登陆成功</title>
 </head>
 <body>
-
+	<h4>登录成功！欢迎您，${username}</h4>
 </body>
 </html>
